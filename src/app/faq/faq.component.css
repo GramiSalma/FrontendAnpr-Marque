@@ -1,0 +1,31 @@
+.faq-container {
+  padding: 16px;
+}
+/* Conteneur transparent pour les questions */
+mat-expansion-panel {
+  background-color: rgb(253, 242, 215); /* Couleur blanche avec une opacité de 0.1 */
+  border: 1px solid rgb(255, 255, 255); /* Bordure légère et transparente */
+  box-shadow: none; /* Enlève l'ombre */
+}
+
+mat-expansion-panel-header {
+  background-color: rgba(0, 0, 0, 0.2); /* Arrière-plan semi-transparent pour le header */
+  color: white; /* Texte en blanc pour la lisibilité */
+}
+
+/* Ajuster le style du texte */
+.mat-expansion-panel-body {
+  color: white; /* Texte en blanc à l'intérieur du conteneur */
+}
+
+mat-toolbar {
+  margin-bottom: 16px;
+}
+:host {
+  display: block;
+  height: 100%;
+  width: 100%;
+  background-image: url('/assets/background.png');
+  background-size: cover;
+  background-position: center;
+}

@@ -1,0 +1,96 @@
+<div class="container">
+  <h2>Historique des Voitures</h2>
+
+  <!-- Barre d'outils pour filtrer, rechercher et exporter -->
+  <div class="toolbar">
+    <!-- Sélectionner la colonne pour filtrer -->
+    <mat-form-field appearance="fill">
+      <mat-label>Filtrer par</mat-label>
+      <mat-select [(value)]="filterColumn">
+        <mat-option value="plaque">Plaque</mat-option>
+        <mat-option value="prefecture">Préfecture</mat-option>
+        <mat-option value="numOrdre">Numéro d'Ordre</mat-option>
+        <mat-option value="serialNumber">Numéro de Série</mat-option>
+        <mat-option value="status">Statut</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <!-- Champ de saisie pour le filtrage -->
+    <mat-form-field appearance="fill">
+      <mat-label>Rechercher</mat-label>
+      <input matInput (keyup)="applyFilter($event)" placeholder="Ex: Rechercher...">
+    </mat-form-field>
+
+    <!-- Bouton d'exportation CSV -->
+    <button mat-raised-button (click)="exportToCSV()">Exporter en CSV</button>
+  </div>
+
+  <mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8">
+    <!-- ID Column -->
+    <ng-container matColumnDef="idVoiture">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> ID </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.idVoiture}} </mat-cell>
+    </ng-container>
+
+    <!-- Plaque Column -->
+    <ng-container matColumnDef="plaque">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> Plaque </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.plaque}} </mat-cell>
+    </ng-container>
+
+    <!-- Prefecture Column -->
+    <ng-container matColumnDef="prefecture">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> Préfecture </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.prefecture}} </mat-cell>
+    </ng-container>
+
+    <!-- NumOrdre Column -->
+    <ng-container matColumnDef="numOrdre">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> Numéro d'Ordre </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.numOrdre}} </mat-cell>
+    </ng-container>
+
+    <!-- SerialNumber Column -->
+    <ng-container matColumnDef="serialNumber">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> Numéro de Série </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.serie}} </mat-cell>
+    </ng-container>
+
+    <!-- Status Column -->
+    <ng-container matColumnDef="status">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> Statut </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.status}} </mat-cell>
+    </ng-container>
+
+    <!-- Actions Column -->
+    <ng-container matColumnDef="actions">
+      <mat-header-cell *matHeaderCellDef> Actions </mat-header-cell>
+      <mat-cell *matCellDef="let element">
+        <!-- Bouton d'édition -->
+        <button mat-icon-button color="primary" (click)="editVoiture(element)">
+          <mat-icon>edit</mat-icon>
+        </button>
+        <!-- Bouton de suppression -->
+        <button mat-icon-button color="warn" (click)="openDeleteConfirmation(element.idVoiture)">
+          <mat-icon>delete</mat-icon>
+        </button>
+      </mat-cell>
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+  </mat-table>
+
+  <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+</div>
+
+<!-- Fenêtre de confirmation de suppression -->
+<div *ngIf="showConfirmationDialog" class="confirmation-overlay">
+  <div class="confirmation-content">
+    <h3>Êtes-vous sûr de vouloir supprimer cette voiture ?</h3>
+    <div class="confirmation-buttons">
+      <button mat-button color="warn" (click)="confirmDelete()">Supprimer</button>
+      <button mat-button (click)="cancelDelete()">Annuler</button>
+    </div>
+  </div>
+</div>

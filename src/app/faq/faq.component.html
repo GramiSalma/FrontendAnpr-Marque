@@ -1,0 +1,91 @@
+
+<div class="faq-container">
+  <mat-accordion>
+
+    <!-- Question 1: À propos de la détection -->
+    <mat-expansion-panel [expanded]="expanded === 'panel1'" (opened)="expanded = 'panel1'" (closed)="expanded = ''">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          À propos de la détection
+        </mat-panel-title>
+        <mat-panel-description>
+          Les plaques susceptibles par ce modèle
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+      <p>Ce modèle est entraîné sur des voitures des préfectures suivantes :</p>
+      <p>'a': 'أ',</p>
+      <p>'b': 'ب',</p>
+      <p>'waw': 'و',</p>
+      <p>'h': 'هـ',</p>
+      <p>'d': 'د',</p>
+      <p>'ch': 'ش'</p>
+      <p>Et il faut modifier en cas de fausse détection, la préfecture en Français !!!</p>
+    </mat-expansion-panel>
+
+    <!-- Question 2: Utilisation de l'application -->
+    <mat-expansion-panel [expanded]="expanded === 'panel2'" (opened)="expanded = 'panel2'" (closed)="expanded = ''">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Utilisation de l'application
+        </mat-panel-title>
+        <mat-panel-description>
+          Comment détecter une plaque d'immatriculation
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+      <p>Pour détecter une plaque d'immatriculation, cliquez sur "Charger une image", sélectionnez une photo de véhicule, puis cliquez sur "Analyser". Le système identifiera automatiquement la plaque et affichera les informations correspondantes.</p>
+    </mat-expansion-panel>
+
+    <!-- Question 3: Gestion des données -->
+    <mat-expansion-panel [expanded]="expanded === 'panel3'" (opened)="expanded = 'panel3'" (closed)="expanded = ''">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Gestion des données
+        </mat-panel-title>
+        <mat-panel-description>
+          Modifier les informations après détection
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+      <p>Après la détection, vous pouvez accéder à la section "Historique" et cliquer sur "Modifier" pour changer les informations d'un véhicule, telles que la plaque, la série, ou le numéro de préfecture.</p>
+    </mat-expansion-panel>
+
+    <!-- Question 4: Sécurité des données -->
+    <mat-expansion-panel [expanded]="expanded === 'panel4'" (opened)="expanded = 'panel4'" (closed)="expanded = ''">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Sécurité des données
+        </mat-panel-title>
+        <mat-panel-description>
+          Comment sont protégées vos données ?
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+      <p>Nous utilisons des protocoles de sécurité avancés pour assurer la confidentialité et l'intégrité de vos données. Les informations sont stockées en toute sécurité dans notre base de données et sont uniquement accessibles via une authentification sécurisée.</p>
+    </mat-expansion-panel>
+
+    <!-- Question 5: Erreurs courantes -->
+    <mat-expansion-panel [expanded]="expanded === 'panel5'" (opened)="expanded = 'panel5'" (closed)="expanded = ''">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Erreurs courantes
+        </mat-panel-title>
+        <mat-panel-description>
+          Que faire en cas de mauvaise détection ?
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+      <p>Si la plaque n'est pas correctement reconnue, essayez de charger une image plus claire ou d'ajuster l'angle de la photo. Si le problème persiste, contactez notre support technique.</p>
+    </mat-expansion-panel>
+
+    <!-- Question 6: Exportation des données -->
+    <mat-expansion-panel [expanded]="expanded === 'panel6'" (opened)="expanded = 'panel6'" (closed)="expanded = ''">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Exportation des données
+        </mat-panel-title>
+        <mat-panel-description>
+          Comment exporter les informations des véhicules ?
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+      <p>Dans la section "Historique", cliquez sur "Exporter". Vous pourrez choisir le format de fichier souhaité (CSV, PDF, etc.) et télécharger les données pour une utilisation ultérieure.</p>
+    </mat-expansion-panel>
+
+  </mat-accordion>
+</div>

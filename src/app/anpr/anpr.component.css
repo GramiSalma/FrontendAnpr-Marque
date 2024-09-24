@@ -1,0 +1,189 @@
+:host {
+  display: block;
+  height: 120%;
+  width: 100%;
+  background-image: url('/assets/background.png');
+  background-size: cover;
+  background-position: center;
+}
+ h2 {
+   font-size: 24px;
+   margin-bottom: 20px;
+   color: rgb(53, 31, 31);
+
+   margin-left:10px ;
+   text-align: center;
+}
+.styled-button {
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  background-color: #006CBA; /* Blue background */
+  color: white; /* White text */
+  border: none; /* Remove borders */
+  border-radius: 12px; /* Rounded corners */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add shadow */
+  transition: background-color 0.3s, box-shadow 0.3s; /* Smooth transitions */
+}
+
+.styled-button:hover {
+  background-color: #005f73; /* Darker blue background on hover */
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2); /* Larger shadow on hover */
+}
+
+.file-input-container button[disabled] {
+  background-color: azure;
+  cursor: not-allowed;
+}
+
+.no-file-text {
+  font-size: 10px; /* Set a smaller font size */
+  color: #666; /* Optional: Change the color to a lighter shade */
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  gap: 20px;
+  background-color: rgba(255, 255, 255, 0); /* Optional: Adds a white overlay for better readability */
+  border-radius: 8px;
+}
+
+.card {
+  width: 45%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  background-color: rgba(255, 220, 150, 0.5);
+}
+
+.file-input-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.file-input-container input[type="file"] {
+  margin-bottom: 10px;
+}
+
+.file-input-container button {
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.file-input-container button[disabled] {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.result-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-top: 20px;
+  width: 100%; /* Ensure the container takes up full width */
+}
+
+.input-group {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  width: 100%;
+}
+
+.input-group label {
+  flex: 1; /* Labels take up equal space */
+  font-size: 14px;
+}
+
+.input-group input {
+  width: 150px; /* Set a fixed width for inputs */
+  padding: 5px;
+  font-size: 14px;
+  margin-left: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.plate-display {
+  width: 150px; /* Set a fixed width for the plate display */
+  padding: 5px;
+  font-size: 14px;
+  margin-left: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  background-color: white;
+  font-weight: bold;
+}
+
+.result-container img {
+  margin-top: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.right-column img {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.loading-overlay, .error-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.loading-content, .error-content {
+  text-align: center;
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  position: relative; /* Add this for close button positioning */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.loading-content mat-progress-spinner {
+  margin-bottom: 10px;
+}
+.plate-image-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+.loading-content p, .error-content p {
+  margin: 0;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  color: red; /* Make the close button red */
+}

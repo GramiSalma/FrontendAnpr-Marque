@@ -1,0 +1,60 @@
+<h2> Lecture des plaques d'immatriculation</h2>
+<div class="container">
+
+  <div class="card left-column">
+    <div class="file-input-container">
+      <input type="file" (change)="onFileSelected($event)" accept="image/*">
+      <button class="styled-button" (click)="onDetect()" [disabled]="!selectedFile">Lire la plaque</button>
+    </div>
+    <div *ngIf="result && !loading" class="result-container">
+      <h3>Résultat :</h3>
+      <div *ngIf="result.plate_image" class="plate-image-container">
+        <img [src]="'data:image/jpeg;base64,' + result.plate_image" alt="L'image de la plaque détectée" width="300">
+      </div>
+      <div class="input-group">
+        <label for="plate-text">Plaque:</label>
+        <div id="plate-text" class="plate-display">{{ result.plate_text }}</div>
+      </div>
+      <div class="input-group">
+        <label for="order-number">Numéro d'ordre</label>
+        <input id="order-number" [(ngModel)]="result.order_number" type="text" placeholder="Numéro d'ordre">
+      </div>
+      <div class="input-group">
+        <label for="registration-series">Série d'immatriculation</label>
+        <input id="registration-series" [(ngModel)]="result.registration_series" type="text" placeholder="Série d'immatriculation">
+      </div>
+      <div class="input-group">
+        <label for="prefecture-number">Numéro de préfecture</label>
+        <input id="prefecture-number" [(ngModel)]="result.prefecture_number" type="text" placeholder="Numéro de préfecture">
+      </div>
+
+
+    </div>
+  </div>
+  <div class="card right-column">
+    <h3></h3>
+    <div *ngIf="((selectedFile) || (result && !loading)) else noFile">
+      <img [src]="imagePreview" alt="L'Image sélectionnée" width="300">
+    </div>
+    <ng-template #noFile>
+      <p class="no-file-text">Aucune image sélectionnée</p>
+    </ng-template>
+  </div>
+</div>
+
+<!-- Spinner de chargement -->
+<div *ngIf="loading" class="loading-overlay">
+  <div class="loading-content">
+    <mat-progress-spinner mode="indeterminate"></mat-progress-spinner>
+    <p>Veuillez patienter...</p>
+  </div>
+</div>
+
+<!-- Message d'erreur -->
+<div *ngIf="error" class="error-overlay">
+  <div class="error-content">
+    <button class="close-button" (click)="closeError()">x</button>
+    <p>{{ error }}</p>
+  </div>
+</div>
+

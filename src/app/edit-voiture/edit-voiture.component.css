@@ -1,0 +1,61 @@
+.edit-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+:host {
+  display: block;
+  height: 120%;
+  width: 100%;
+  background-image: url('/assets/background.png');
+  background-size: cover;
+  background-position: center;
+}
+
+h2 {
+  text-align: center;
+  color: #090808;
+  margin-bottom: 20px;
+  font-size: 24px; /* Taille du texte plus grande */
+}
+
+
+.voiture-details {
+  display: flex;
+  flex-direction: row; /* Affiche l'image et les informations côte à côte */
+  align-items: flex-start; /* Alignement en haut pour l'image et le formulaire */
+  justify-content: space-between; /* Espace entre l'image et le formulaire */
+}
+
+.voiture-image {
+  width: 300px;
+  height: auto;
+  margin-right: 20px; /* Espace entre l'image et le formulaire */
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.form-container {
+  flex-grow: 1; /* Permet au formulaire de prendre l'espace restant */
+  display: flex;
+  flex-direction: column;
+  gap: 5px; /* Ajoute de l'espace entre les champs du formulaire */
+}
+
+mat-form-field {
+  width: 100%;
+}
+
+.button-group {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+button {
+  width: 48%;
+}

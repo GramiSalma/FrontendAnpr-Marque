@@ -1,0 +1,135 @@
+/* Style général pour le conteneur */
+:host {
+  display: block;
+  height: 100%;
+  width: 100%;
+  background-image: url('/assets/background.png');
+  background-size: cover;
+  background-position: center;
+  padding: 20px;
+}
+
+/* Style pour le titre */
+.container h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #e0c3c3;
+}
+
+/* Style pour aligner le filtre, la recherche et l'export sur la même ligne */
+.toolbar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+/* Style pour le mat-form-field */
+mat-form-field {
+  flex: 1;
+}
+
+/* Style pour le bouton CSV */
+button.mat-raised-button {
+  white-space: nowrap;
+}
+
+/* Style pour le tableau MatTable */
+.mat-table {
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+/* Style pour les cellules du tableau */
+.mat-cell, .mat-header-cell {
+  padding: 8px;
+  text-align: left;
+  color: #333;
+}
+
+/* Style pour les lignes du tableau */
+.mat-row {
+  transition: background-color 0.3s;
+}
+
+.mat-row:hover {
+  background-color: #f1f1f1;
+}
+
+/* Style pour les boutons */
+button.mat-icon-button {
+  color: #3f51b5;
+  transition: transform 0.3s;
+}
+
+button.mat-icon-button:hover {
+  color: #283593;
+  transform: scale(1.1);
+}
+
+button.mat-icon-button:active {
+  transform: scale(0.9);
+}
+
+/* Style pour le paginator */
+.mat-paginator {
+  background-color: rgba(255, 255, 255, 0.8);
+  border-top: 1px solid #ddd;
+  padding: 8px 0;
+}
+
+.mat-paginator .mat-button {
+  color: #3f51b5;
+}
+
+.mat-paginator .mat-button:hover {
+  background-color: #f1f1f1;
+}
+.confirmation-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.confirmation-content {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+
+.confirmation-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.confirmation-content {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+
+.confirmation-buttons {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-around;
+}
